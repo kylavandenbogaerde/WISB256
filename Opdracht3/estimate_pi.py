@@ -5,10 +5,14 @@ import sys
 if len(sys.argv)-1 >= 3:
     random.seed(int(sys.argv[3]))
 
+if len(sys.argv)-1<2:
+    print('Use: estimate_pi.py N L')
+    exit()
+
 d=1                           #afstand tussen de lijnen
 L = int(sys.argv[2])          #lengte van de naald
 if L>d:
-    print('L should be smaller than '+ str(d))
+    print('AssertionError: L should be smaller than '+ str(d))
     exit()
 N=int(sys.argv[1])            #aantal herhalingen experiment
 
