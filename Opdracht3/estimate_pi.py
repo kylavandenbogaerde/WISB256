@@ -10,7 +10,7 @@ if len(sys.argv)-1<2:
     exit()
 
 d=1                           #afstand tussen de lijnen
-L = int(sys.argv[2])          #lengte van de naald
+L = float(sys.argv[2])          #lengte van de naald
 if L>d:
     print('AssertionError: L should be smaller than '+ str(d))
     exit()
