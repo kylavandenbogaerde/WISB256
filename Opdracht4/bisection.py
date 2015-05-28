@@ -45,7 +45,7 @@ def findRoot(f, a, b, epsilon):
 
 
 
-def findALLRoots(f,a,b,epsilon):
+def findAllRoots(f,a,b,epsilon):
     nulpunten=[]
     aantal_intervallen= int((b-a)/epsilon)
     #print(aantal_intervallen)
@@ -57,7 +57,7 @@ def findALLRoots(f,a,b,epsilon):
             #print(nulpunten)
     return (list(set(nulpunten)))
 
-#def findALLRoots(f, a, b, epsilon):
+#def findAllRoots(f, a, b, epsilon):
 #    nulpunten=[]
 #    if f(a)==0:
 #        nulpunten.append(a)
