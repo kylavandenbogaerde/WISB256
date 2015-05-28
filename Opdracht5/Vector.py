@@ -56,5 +56,21 @@ class Vector:
         return answer
 
         
-        
+def GrammSchmidt(lijst):
+    genormeerd=[]
+    y=lijst[0].norm()
+    x=1/y
+    e1=lijst[0].scalar(x)
+    genormeerd.append(e1)
+    for i in range(1, len(lijst)):
+        a=Vector(lijst[0].dimensie,0)
+        for j in range(i):
+            b=lijst[i].inner(genormeerd[j])#/((lijst[j].norm())**2)
+            c=genormeerd[j].scalar(b)
+            a=a.lincomb(c,1,1)
+        u=a.scalar(-1)
+        e=lijst[i].lincomb(u,1,1)
+        e=e.scalar(1/(e.norm()))
+        genormeerd.append(e)
+    return genormeerd
             
