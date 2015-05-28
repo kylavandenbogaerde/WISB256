@@ -40,15 +40,15 @@ C=0.6601618
 2*C*N/(math.log(N)**2)
 ratio2=(pi_2(N)*((math.log(N))**2))/(2*C*N)
 
-print('Largest Prime =', Largest_Prime)
+print('Largest Prime = ', Largest_Prime)
 
-print('pi(N) =', pi(N))
-print('N/log(N) =', N/math.log(N))
-print('ratio =', ratio)
+print('pi(N)         = ', pi(N))
+print('N/log(N)      = ', N/math.log(N))
+print('ratio         = ', ratio)
 
-print('pi_2(N) = ', pi_2(N))
-print('2CN/log(N)^2 =', 2*C*N/(math.log(N)**2))
-print('ratio =', ratio2)
+print('pi_2(N)       = ', pi_2(N))
+print('2CN/log(N)^2  = ', 2*C*N/(math.log(N)**2))
+print('ratio         = ', ratio2)
 
 
 
