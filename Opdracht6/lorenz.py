@@ -32,16 +32,17 @@ class Lorenz:
         x=u[0]
         y=u[1]
         z=u[2]
-        A=matrix([[-self.sigma, self.sigma, 0],[self.rho - z, -1, -x],[y, x, self.beta]])
+        A=matrix([[-self.sigma, self.sigma, 0],[self.rho - z, -1, -x],[y, x, -self.beta]])
         return A
 
     def isStable(self, u):
         A=self.df(u)
-        #eigenwaarden=list(linalg.eigvals(A))
-        print(eigenwaarden)
+        eigenwaarden=list(linalg.eigvals(A))
+        #print(eigenwaarden)
         for i in range(len(eigenwaarden)):
             if eigenwaarden[i]>=0:
                 return False
         return True
+            
             
 
