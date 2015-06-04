@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 from mpl_toolkits.mplot3d import Axes3D
+from numpy import matrix
+from numpy import linalg
 
 class Lorenz:
 
@@ -26,5 +28,20 @@ class Lorenz:
         a=odeint(self.f, [self.x, self.y, self.z], ts)
         return a
 
+    def df(self, u):
+        x=u[0]
+        y=u[1]
+        z=u[2]
+        A=matrix([[-self.sigma, self.sigma, 0],[self.rho - z, -1, -x],[y, x, self.beta]])
+        return A
 
+    def isStable(self, u):
+        A=self.df(u)
+        #eigenwaarden=list(linalg.eigvals(A))
+        print(eigenwaarden)
+        for i in range(len(eigenwaarden)):
+            if eigenwaarden[i]>=0:
+                return False
+        return True
+            
 
